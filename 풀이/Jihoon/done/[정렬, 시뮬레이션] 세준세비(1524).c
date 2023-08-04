@@ -2,8 +2,7 @@
 
 int t;
 int main() {
-    scanf("%d", &t);
-    for ( ; t-- ; ) {
+    for ( scanf("%d", &t); t-- ; ) {
         int n, m, x, p = 0, q = 0;
         scanf("%d%d", &n, &m);
         while (n--) {
