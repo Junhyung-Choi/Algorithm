@@ -8,6 +8,7 @@ char floydWarshall(int arr[][26]){
             for(int j = 0; j < 26; j++){
                 if(arr[i][k] == 1 && arr[k][j] == 1){
                     arr[i][j] = 1;  
+                }
             }
         }
     }
