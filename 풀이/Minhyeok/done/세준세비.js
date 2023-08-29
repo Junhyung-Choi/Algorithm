@@ -1,3 +1,5 @@
+// 1524
+
 let fs = require("fs");
 let inputData = fs.readFileSync("/dev/stdin").toString().trim().split("\n");
 
