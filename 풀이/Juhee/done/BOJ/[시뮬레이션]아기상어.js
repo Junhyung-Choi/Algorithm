@@ -108,33 +108,3 @@ const getFishToEatByBfs = (sharkLocation, sharkSize, graph) => {
 };
 
 console.log(solution(input));
-
-// DRAFT CODE
-// const fishLocations = [];
-// for (let i = 0; i < N; i++) {
-//   for (let j = 0; j < N; j++) {
-//     if (graph[i][j] < sharkSize && graph[i][j] != 0 && graph[i][j] != 9) {
-//       const diffLocation =
-//         Math.abs(sharkLocation[0] - i) + Math.abs(sharkLocation[1] - j);
-//       // 큰 물고기를 지나갈 수 없다
-//       fishLocations.push([i, j, diffLocation]);
-//     }
-//   }
-// }
-// fishLocations.sort((a, b) => {
-//   // 가장 가까운 거리 -> 가장 위에 있는 고기 -> 가장 왼쪽에 있는 고기
-//   if (a[2] !== b[2]) return a[2] - b[2];
-//   if (a[0] !== b[0]) return a[0] - b[0];
-//   return a[1] - b[1];
-// });
-// if (fishLocations.length === 0) break;
-// const fishToEat = fishLocations[0];
-// // 크가가 같은 고기를 먹으면 크기가 1 증가
-// if (
-//   graph[fishToEat[0]][fishToEat[1]] ===
-//   graph[sharkLocation[0]][sharkLocation[1]]
-// )
-//   sharkSize++;
-// graph[fishToEat[0]][fishToEat[1]] = 0;
-// sharkLocation = [fishToEat[0], fishToEat[1]];
-// answer += fishToEat[2]; // 초 시간 (거리 차이)
