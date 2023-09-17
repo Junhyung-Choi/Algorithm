@@ -22,6 +22,8 @@
 
 using namespace std;
 
+typedef pair<pair<int, int>, int> DISTANCE_INFO;
+
 int n; 
 
 int space[20][20];                                      // ? 물고기 & 상어 위치 정보
@@ -29,6 +31,7 @@ int shark_size = 2;                                     // ? 아기 상어의 �
 int eat_cnt;                                            // ? 아기 상어가 먹은 물고기의 수
 int spend_time;                                         // ? 소요 시간 (결괏값)
 int next_row, next_col;                                 // ? 아기 상어의 위치
+vector<DISTANCE_INFO> same_dist;                        // ? 동일한 최단거리에 있는 물고기의 집합 ({{row, col}, distance})
 
 int visited[20][20];                                    // ? space[i][j]의 방문 여부 -> bfs 시작할 때마다 초기화
 int current_row, current_col, current_dist;             // ? bfs에서 현재 탐색중인 위치정보
@@ -40,8 +43,8 @@ vector<pair<pair<int, int>, int>> bfs(int start_row, int start_col) {
     // * 현재 아기상어 위치의 물고기 여부를 0으로 설정한다.
     space[start_row][start_col] = 0;
 
-    vector<pair<pair<int, int>, int>> same_dist;    // ? 동일한 최단거리에 있는 물고기의 집합 ({{row, col}, distance})
-    queue<pair<int, int>> q;                        // ? bfs에서 사용할 큐 ({{row, col}, distance})
+    same_dist.clear();
+    queue<pair<int, int>> q;                            // ? bfs에서 사용할 큐 ({{row, col}, distance})
 
     // - bfs 탐색
     // * 시작 지점의 방문 기록
@@ -74,7 +77,7 @@ vector<pair<pair<int, int>, int>> bfs(int start_row, int start_col) {
 }
 
 // * 정렬 우선순위 - 1. 거리순, 2. row 오름차순, 3. col 오름차순
-bool comp(pair<pair<int, int>, int> a, pair<pair<int, int>, int> b) {
+bool comp(DISTANCE_INFO a, DISTANCE_INFO b) {
     // ? 거리가 같은 경우 - 1. row 오름차순 2. col 오름차순
     if (a.second == b.second) {
         if (a.first.first == b.first.first) {
@@ -87,7 +90,7 @@ bool comp(pair<pair<int, int>, int> a, pair<pair<int, int>, int> b) {
 }
 
 int main() {
-    vector<pair<pair<int, int>, int>> fishes; // ? 먹을 수 있는 물고기의 집합 ({{row, col}, distance})
+    vector<DISTANCE_INFO> fishes; // ? 먹을 수 있는 물고기의 집합 ({{row, col}, distance})
     
     // * 값 입력
     cin >> n;
