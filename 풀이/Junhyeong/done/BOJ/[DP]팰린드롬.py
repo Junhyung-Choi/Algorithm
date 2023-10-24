@@ -20,5 +20,5 @@ for index in range(length):
                 dp[start][end] = 1 
 
 for _ in range(TC):
-    S, E = map(int, sys.stdin.readline().split())
+    S, E = map(int, input().split())
     print(dp[S-1][E-1])
