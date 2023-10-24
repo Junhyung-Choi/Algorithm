@@ -39,28 +39,10 @@ const solution = (input) => {
 
   for (let i = 0; i < M; i++) {
     const [S, E] = input[i].split(" ").map(Number);
-    // const target = numbers.slice(S - 1, E); // 해당 target에 대해 펠린드롬 여부를 체크해야함
     dp[S - 1][E - 1] ? answer.push(1) : answer.push(0);
-    // checkPalindrome(target) ? answer.push(1) : answer.push(0);
   }
 
   return answer.join("\n");
 };
-
-// const checkPalindrome = (numbers) => {
-//   // 처음 풀이한 코드 : pointer 활용하여 끝과 끝 비교하기 -> 시간초과
-//   if (numbers.length === 1) return true;
-
-//   let left = 0;
-//   let right = numbers.length - 1;
-
-//   while (left < right) {
-//     if (numbers[left] !== numbers[right]) return false;
-//     left++;
-//     right--;
-//   }
-
-//   return true;
-// };
 
 console.log(solution(input));
