@@ -7,3 +7,4 @@
 | 29   | [아기상어](https://www.acmicpc.net/problem/16236)                                                | 시뮬레이션    | GOLD3  |
 | 30   | [삼성 공채 코딩테스트 모의 1-1 : 동전 챙기기](https://www.codetree.ai/training-field/mock-tests) | BFS           |        |
 | 31   | [팰린드롬?](https://www.acmicpc.net/problem/10942)                                               | DP            | GOLD4  |
+| 32   | [거짓말](https://www.acmicpc.net/problem/1043)                                                   | Union-Find    | GOLD4  |
