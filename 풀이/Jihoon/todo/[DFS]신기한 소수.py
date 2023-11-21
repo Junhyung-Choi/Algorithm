@@ -30,3 +30,8 @@ def dfs(num):
             temp = num * 10 + i # 자릿 수를 늘리고 0-9까지를 더해줘가며 소수인지 확인한다
             if checkPrimeNum(temp) == True: # 소수인게 확인되면 다시 dfs를 돌린다
                 dfs(temp)
+
+dfs(2)
+dfs(3)
+dfs(5)
+dfs(7)
