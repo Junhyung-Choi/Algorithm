@@ -1,4 +1,6 @@
-# https://www.acmicpc.net/problem/2166
+# 본인이 선택한 언어로 풀이해주세요.
+# https://www.acmicpc.net/problem/2166 백준 - 다각형의 면적
+
 import sys
 input = sys.stdin.readline
 
